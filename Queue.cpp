@@ -19,8 +19,12 @@ int Pop(void)
 {
     if (!isQueueEmpty())
     {
+        for(int i = 0; i < queue_index -1; i ++)
+        {
+            queue_table[i] = queue_table[i+1];
+        }
         queue_index--;
-        return queue_table[queue_index];
+
     }
 
     return queue_table[0];
@@ -30,7 +34,7 @@ int Top(void)
 {
     if (!isQueueEmpty())
     {
-        return queue_table[queue_index - 1];
+        return queue_table[0];
     }
 
     return queue_table[0];
