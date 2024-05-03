@@ -4,11 +4,11 @@
 void menu(void)
 {
     printf("\n");
-    printf("1 - poloz liczbe na stosie (Push)\n");
-    printf("2 - odczytaj wartosc ze szczytu stosu (Top)\n");
-    printf("3 - zdejmij liczbe ze stosu (Pop)\n");
-    printf("4 - sprawdz czy stos jest pusty\n");
-    printf("5 - sprawdz czy stos jest pelny\n");
+    printf("1 - postaw liczbe w kolejce  (Push)\n");
+    printf("2 - odczytaj wartosc pierwszego elementu kolejki (Top)\n");
+    printf("3 - usun pierwszy element kolejki (Pop)\n");
+    printf("4 - sprawdz czy kolejka jest pusta\n");
+    printf("5 - sprawdz czy kolejka jest pelna\n");
     printf("6 - koniec programu\n");
     printf("\n");
 }
@@ -32,7 +32,7 @@ int main()
                     Push(temp);
                 }
                 else {
-                    printf("operacja niedozwolona STOS pelny!!!\n\n");
+                    printf("operacja niedozwolona KOLEJKA jest pelna!!!\n\n");
                 }
 
                 break;
@@ -43,7 +43,7 @@ int main()
                     printf("Odczytana wartosc: %d", temp);
                 }
                 else {
-                    printf("operacja niedozwolona STOS pusty!!!\n\n");
+                    printf("operacja niedozwolona KOLEJKA jest pusta!!!\n\n");
                 }
 
                 break;
@@ -51,28 +51,28 @@ int main()
             case 3:
                 if (!isQueueEmpty()) {
                     temp = Pop();
-                    printf("Odczytana wartosc: %d", temp);
+                    printf("Nowy pierwszy element: %d", temp);
                 }
                 else {
-                    printf("operacja niedozwolona STOS pusty!!!\n\n");
+                    printf("operacja niedozwolona KOLEJKA jest pusta!!!\n\n");
                 }
                 break;
 
             case 4:
                 if (isQueueEmpty()) {
-                    printf("STOS jest pusty.\n");
+                    printf("KOLEJKA jest pusta.\n");
                 }
                 else {
-                    printf("STOS nie jest pusty.\n");
+                    printf("KOLEJKA nie jest pusta.\n");
                 }
                 break;
 
             case 5:
                 if (isQueueFull()) {
-                    printf("STOS jest pelny.\n");
+                    printf("KOLEJKA jest pelna.\n");
                 }
                 else {
-                    printf("STOS nie jest pelny.\n");
+                    printf("KOLEJKA nie jest pelna.\n");
                 }
                 break;
 
