@@ -1,17 +1,17 @@
 #include <stdio.h>
 #include "Queue.h"
-
-
+#include <iostream>
+using namespace std;
 void menu(void)
 {
-    printf("\n");
-    printf("1 - postaw liczbe w kolejce  (Push)\n");
-    printf("2 - odczytaj wartosc pierwszego elementu kolejki (Top)\n");
-    printf("3 - usun pierwszy element kolejki (Pop)\n");
-    printf("4 - sprawdz czy kolejka jest pusta\n");
-    printf("5 - sprawdz czy kolejka jest pelna\n");
-    printf("6 - koniec programu\n");
-    printf("\n");
+    cout << endl;
+    cout <<"1 - postaw liczbe w kolejce  (Push)" << endl;
+    cout <<"2 - odczytaj wartosc pierwszego elementu kolejki (Top)"<< endl;
+    cout <<"3 - usun pierwszy element kolejki (Pop)"<< endl;
+    cout <<"4 - sprawdz czy kolejka jest pusta"<< endl;
+    cout <<"5 - sprawdz czy kolejka jest pelna"<< endl;
+    cout <<"6 - koniec programu"<< endl;
+    cout << endl;
 }
 
 int main()
@@ -21,19 +21,19 @@ int main()
     while (1)
     {
         menu();
-        scanf("%d", &option);
+        cin >> option;
 
 
         switch (option)
         {
             case 1:
                 if ( !isQueueFull() ){
-                    printf("Podaj wartosc: ");
-                    scanf("%d", &temp);
+                    cout << "Podaj wartosc: ";
+                    cin >> temp;
                     Push(temp);
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA jest pelna!!!\n\n");
+                    cout << "operacja niedozwolona KOLEJKA jest pelna!!!"<< endl << endl;
                 }
 
                 break;
@@ -41,10 +41,10 @@ int main()
             case 2:
                 if (!isQueueEmpty()) {
                     temp = Top();
-                    printf("Odczytana wartosc: %d", temp);
+                    cout << "Odczytana wartosc:"<< temp << endl;
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA jest pusta!!!\n\n");
+                    cout <<"operacja niedozwolona KOLEJKA jest pusta!!!"<< endl;
                 }
 
                 break;
@@ -52,28 +52,28 @@ int main()
             case 3:
                 if (!isQueueEmpty()) {
                     temp = Pop();
-                    printf("Nowy pierwszy element: %d", temp);
+                    cout << "Nowy pierwszy element: " << temp << endl;
                 }
                 else {
-                    printf("operacja niedozwolona KOLEJKA jest pusta!!!\n\n");
+                    cout << "operacja niedozwolona KOLEJKA jest pusta!!!"<< endl;
                 }
                 break;
 
             case 4:
                 if (isQueueEmpty()) {
-                    printf("KOLEJKA jest pusta.\n");
+                    cout <<"KOLEJKA jest pusta." << endl;
                 }
                 else {
-                    printf("KOLEJKA nie jest pusta.\n");
+                    cout <<"KOLEJKA nie jest pusta."<< endl;
                 }
                 break;
 
             case 5:
                 if (isQueueFull()) {
-                    printf("KOLEJKA jest pelna.\n");
+                    cout <<"KOLEJKA jest pelna."<< endl;
                 }
                 else {
-                    printf("KOLEJKA nie jest pelna.\n");
+                    cout <<"KOLEJKA nie jest pelna."<< endl;
                 }
                 break;
 
@@ -82,7 +82,7 @@ int main()
                 return 0;
 
             default:
-                printf("Wybierz wlasciwa opcje.\n\n");
+                cout <<"Wybierz wlasciwa opcje."<< endl;
                 break;
         }
     }
